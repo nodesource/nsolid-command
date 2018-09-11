@@ -36,7 +36,7 @@ module.exports = function nsolidCommand () {
     nsolid = require('nsolid')
     nsolid.on(name, command)
   } catch (e) {
-    emitWarning(e.message)
+    emitWarning(name, e.message)
   }
 }
 
@@ -44,6 +44,6 @@ function emitWarning (name, message) {
   if (process.emitWarning) {
     process.emitWarning(message, `${MODULE_NAME} - ${name}`)
   } else {
-    console.error(`${MODULE_NAME} - ${name}: - ${message}`)
+    console.error(`${MODULE_NAME} - ${name}: ${message}`)
   }
 }

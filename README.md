@@ -1,6 +1,6 @@
 # N|Solid Custom Command
 
-Implement a [N|Solid custom command][], for more information please visit our [N|Solid documentation site][]
+Implement a [N|Solid custom command][] for your application. For more information please visit our [N|Solid documentation site][].
 
 ## Installation
 
@@ -57,7 +57,7 @@ If you'd like to contribute code to this project, please read the
   <tr>
     <th align="left">Julián Duque</th>
     <td><a href="https://github.com/julianduque">GitHub/julianduque</a></td>
-    <td><a href="https://twitter.com/julianduque">Twitter/@julian_duque</a></td>
+    <td><a href="https://twitter.com/julian_duque">Twitter/@julian_duque</a></td>
   </tr>
 </tbody></table>
 
