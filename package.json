@@ -1,0 +1,22 @@
+{
+  "name": "nsolid-command",
+  "version": "1.0.0",
+  "description": "A N|Solid Custom Command Manager",
+  "main": "nsolid-command.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodesource/nsolid-command.git"
+  },
+  "author": "NodeSource Inc. <npm@nodesource.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodesource/nsolid-command/issues"
+  },
+  "homepage": "https://github.com/nodesource/nsolid-command#readme",
+  "devDependencies": {
+    "tape": "^4.9.1"
+  }
+}
