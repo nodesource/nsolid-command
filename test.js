@@ -3,7 +3,7 @@
 const test = require('tape')
 const nsolidCommand = require('./nsolid-command')
 
-test('required params', t => {
+test('options object arguments', t => {
   t.throws(() => {
     nsolidCommand()
   }, 'options is required')
@@ -14,18 +14,32 @@ test('required params', t => {
     nsolidCommand({
       name: 'test'
     })
-  }, 'callback is required')
+  }, 'command is required')
   t.throws(() => {
     nsolidCommand({
       name: 'test',
-      callback: 1
+      command: 1
     })
-  }, 'callback is a function')
+  }, 'command is a function')
   t.doesNotThrow(() => {
     nsolidCommand({
       name: 'test',
-      callback: () => {}
+      command: () => {}
     })
+  })
+  t.pass('everything is fine 🔥')
+  t.end()
+})
+
+test('simple arguments', t => {
+  t.throws(() => {
+    nsolidCommand('test')
+  }, 'command is missing')
+  t.throws(() => {
+    nsolidCommand('test', 1)
+  }, 'command is not a function')
+  t.doesNotThrow(() => {
+    nsolidCommand('test', () => {})
   })
   t.pass('everything is fine 🔥')
   t.end()

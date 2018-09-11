@@ -10,12 +10,24 @@ npm install nsolid-command
 
 ## Usage
 
+_Note: For the following example make sure you run your node process with `--expose-gc`_
+
 ``` js
 const nsolidCommand = require('nsolid-command')
 
+nsolidCommand('gc', request => {
+  global.gc()
+  request.return({
+    status: 'OK',
+    type: 'gc'
+  })
+})
+
+// or
+
 nsolidCommand({
   name: 'gc',
-  callback: request => {
+  command: request => {
     global.gc()
     request.return({
       status: 'OK',

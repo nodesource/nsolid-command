@@ -12,18 +12,29 @@ const MODULE_NAME = path.basename(__filename).replace(/\.js$/, '')
 //
 // More information: https://docs.nodesource.com/docs#custom-commands
 // -----------------------------------------------------------------------------
-module.exports = function nsolidCommand (options) {
-  assert(options, 'options is required')
-  assert(options.name, 'name is required')
-  assert(options.callback, 'callback is required')
-  assert(typeof options.callback === 'function', 'callback needs to be a function')
+module.exports = function nsolidCommand () {
+  let options, name, command
+  if (arguments.length === 1) {
+    options = arguments[0]
+    assert(options, 'options is required')
+    assert(typeof options === 'object', 'options must be an object')
+    assert(options.name, 'name is required')
+    assert(options.command, 'command is required')
+    name = options.name
+    command = options.command
+  } else if (arguments.length === 2) {
+    name = arguments[0]
+    command = arguments[1]
+  } else {
+    throw new TypeError('wrong number of arguments')
+  }
 
-  const { name, callback } = options
+  assert(typeof command === 'function', 'command must be a function')
 
   let nsolid
   try {
     nsolid = require('nsolid')
-    nsolid.on(name, callback)
+    nsolid.on(name, command)
   } catch (e) {
     emitWarning(e.message)
   }
