@@ -1,6 +1,6 @@
 {
   "name": "nsolid-command",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A N|Solid Custom Command Helper",
   "main": "nsolid-command.js",
   "scripts": {
