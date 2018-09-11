@@ -1,7 +1,7 @@
 {
   "name": "nsolid-command",
   "version": "1.0.0",
-  "description": "A N|Solid Custom Command Manager",
+  "description": "A N|Solid Custom Command Helper",
   "main": "nsolid-command.js",
   "scripts": {
     "test": "node test.js"
